@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    container_name: go-test
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    volumes:
+      - ./web:/go/src
+    env_file:
+      - ./.go_env
+    ports:
+      - 3001:3001
